@@ -9,7 +9,7 @@ let checkValid = function (value) {
     if (typeof value == "undefined" || typeof value == "number" || value.length == 0 || typeof value == null) {
         return false
     } else if (typeof value == "string") {
-        return true
+        return true 
     }
     return true
 }
@@ -17,6 +17,7 @@ let checkValid = function (value) {
 
 //===============================Create Colleges==============================================//
 const createColleges = async function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin','*')
     try {
         let data = req.body
 

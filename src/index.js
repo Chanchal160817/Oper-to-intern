@@ -3,10 +3,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const route = require('./route/route.js');
 const { default: mongoose } = require('mongoose');
+const multer = require('multer');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(multer().any())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
@@ -30,6 +32,6 @@ app.use(function (req, res) {
 
 
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log('Express App Running on Port: ' + (process.env.PORT || 3000))
+app.listen(process.env.PORT || 3001, function () {
+    console.log('Express App Running on Port: ' + (process.env.PORT || 3001))
 });
